@@ -10,7 +10,7 @@
 <body class="bg-secondary">
     <div class="container-fluid p-1 ">
         <form class="w-100 mx-auto p-1 border rounded-2 bg-light needs-validation" novalidate>
-            <p class="mt-3">①ブランド名</p>あ
+            <p class="mt-3">①ブランド名</p>
             <div>
                 <input class="form-control w-100 mt-1" name="form1" placeholder="入力してください" required>
             </div>
@@ -86,21 +86,19 @@
         const key = params.get('key');
 
         $(function () {
-            $('form').submit(function () {
-                const forms = document.querySelectorAll('.needs-validation')
+            const forms = document.querySelectorAll('.needs-validation')
 
-                // Loop over them and prevent submission
-                Array.from(forms).forEach(form => {
-                    form.addEventListener('submit', event => {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-                
+                    form.classList.add('was-validated')
+                }, false)
+
                 const form1 = $('input[name="form1"]').val();
                 const form2 = $('input[name="form2"]').val();
                 const form3 = $('input[name="form3"]').val();
@@ -111,7 +109,7 @@
                 const msg = `${form1}\n${form2}\n${form3}\n${form4}\n${form5}\n${form6}\n${form7}`;
                 sendText(msg);
                 return false;
-            });
+            })
         });
     </script>
 
