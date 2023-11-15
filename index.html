@@ -98,7 +98,8 @@
 
                     form.classList.add('was-validated')
                 }, false)
-
+            })
+            $('form').submit(function () {
                 const form1 = $('input[name="form1"]').val();
                 const form2 = $('input[name="form2"]').val();
                 const form3 = $('input[name="form3"]').val();
@@ -109,7 +110,7 @@
                 const msg = `${form1}\n${form2}\n${form3}\n${form4}\n${form5}\n${form6}\n${form7}`;
                 sendText(msg);
                 return false;
-            })
+            });
         });
     </script>
 
