@@ -10,6 +10,11 @@
 <body class="bg-secondary">
     <div class="container-fluid p-1 ">
         <form class="w-100 mx-auto p-1 border rounded-2 bg-light needs-validation" novalidate>
+            <p class="mt-3">送信日</p>
+            <div>
+                <input class="form-control w-100 mt-1" name="formTime" value="" placeholder="" required disabled>
+            </div>
+
             <p class="mt-3">①ブランド名</p>
             <div>
                 <input class="form-control w-100 mt-1" name="form1" placeholder="入力してください" required>
@@ -59,6 +64,24 @@
         $(document).ready(function () {
             const liffId = "2001339010-9mQ3rzqZ";
             initializeLiff(liffId);
+        })
+
+        $(document).ready(function () {
+            var today = new Date();
+
+            //年・月・日・曜日・時間を取得
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var week = today.getDay();
+            var day = today.getDate();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+
+            var week_ja = new Array("日", "月", "火", "水", "木", "金", "土");
+
+            //年・月・日・曜日を書き出す
+            var formTimeText = year + "年" + month + "月" + day + "日 " + week_ja[week] + "曜日" + hour + "時" + minute + "分";
+            $('input[name="formTime"]').val(formTimeText);
         })
 
         function initializeLiff(liffId) {
