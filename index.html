@@ -135,15 +135,15 @@
             //     }, false)
             // })
             $('form').submit(function () {
-                const formTime = $('input[name="formTime"]').val();
-                const form1 = $('input[name="form1"]').val();
-                const form2 = $('input[name="form2"]').val();
-                const form3 = $('input[name="form3"]').val();
-                const form4 = $('input[name="form4"]').val();
-                const form5 = $('input[name="form5"]').val();
-                const form6 = $('input[name="form6"]').val();
-                const form7 = $('textarea[name="form7"]').val();
-                const msg = `査定内容&nbsp;\n送信日：${formTime} \nブランド名：${form1} \nアイテム名：${form2} \nご購入時期：${form3} \nコンディション：${form4} \n素材：${form5} \nサイズ：${form6} \nその他情報：${form7}`;
+                const formTime = $('[name="formTime"]').val();
+                const form1 = $('[name="form1"]').val();
+                const form2 = $('[name="form2"]').val();
+                const form3 = $('[name="form3"]').val();
+                const form4 = $('[name="form4"]').val();
+                const form5 = $('[name="form5"]').val();
+                const form6 = $('[name="form6"]').val();
+                const form7 = $('[name="form7"]').val();
+                const msg = `査定内容 \n送信日：${formTime} \nブランド名：${form1} \nアイテム名：${form2} \nご購入時期：${form3} \nコンディション：${form4} \n素材：${form5} \nサイズ：${form6} \nその他情報：${form7}`;
                 sendText(msg);
                 return false;
             });
